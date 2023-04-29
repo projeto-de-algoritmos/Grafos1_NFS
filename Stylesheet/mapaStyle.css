@@ -29,8 +29,8 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 1000px;
-    height: 400px;
+    width: 1400px;
+    height: 500px;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -38,43 +38,13 @@ body {
     margin: 0 auto;
   }
 
-.text {
-  width: 50%;
-  align-self: start;
-  font-size: larger;
-  text-align: justify;
-  color: #fff;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-.text h2{
-    text-align: center;
-    font-family: "nfs_fontregular";
-}
-.image {
-    margin: 20px;
-    gap: 4px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* centraliza verticalmente */
-    justify-content: center; /* centraliza horizontalmente */
-}
-
-.image img {
-  border-radius: 10px;
-  max-width: 100%;
-  height: 370px;
-  width: auto;
-}
-
-
 .header {
     display: flex;
     flex: 1;
     margin-top: 16px;
     margin-left: 120px;
     margin-right: 120px;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
     max-height: 50px;
     justify-content: center;
 }
@@ -91,24 +61,7 @@ a {
     font-size: 40px;
 }
 
-button {
-    background-color: purple;
-    font-family: sans-serif;
-    border: none;
-    color: #fff;
-    font-size: 18px;
-    padding: 10px 20px;
-    border-radius: 30px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #e65300;
-  }
+
 
 .footer {
     position: absolute;
