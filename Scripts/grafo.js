@@ -236,14 +236,3 @@ function bfs(inicio, fim) {
 
   console.log(`Menor caminho de ${inicio} a ${fim}: ${caminho.join(" -> ")}`);
 }
-
-const container = document.getElementById("buttons-container"); // substitua "buttons-container" pelo ID do seu contêiner HTML
-for (let node in grafo) {
-  const button = document.createElement("button");
-  button.innerText = node;
-  container.appendChild(button);
-}
-
-
-
-bfs(17, 40);
