@@ -200,14 +200,14 @@ const visitados = {
 
 function bfs(inicio, fim) {
   const fila = new Fila();
+  const antecessores = {}; // objeto para armazenar antecessores
+  antecessores[inicio] = null; // o início não tem antecessor
 
   //enfileira o nó inicial e marca como visitado
   fila.enfileira(inicio);
   visitados[inicio] = true;
 
-  logFinal += `BFS pelo vertice ${inicio}
-
-`;
+  logFinal += `BFS pelo vertice ${inicio}\n`;
   while (!fila.estaVazia()) {
     const noAtual = fila.desenfileira();
     const vizinhos = grafo[noAtual];
@@ -215,16 +215,35 @@ function bfs(inicio, fim) {
     vizinhos.forEach((vizinho) => {
       if (!visitados[vizinho]) {
         visitados[vizinho] = true;
+        antecessores[vizinho] = noAtual; // armazena o antecessor do vizinho
         fila.enfileira(vizinho);
-        logFinal += `${noAtual} -> ${vizinho}
-`;
+        logFinal += `${noAtual} -> ${vizinho}\n`;
       }
     });
+
     if (visitados[fim]) {
       break;
     }
   }
-  console.log(logFinal);
+
+  // reconstroi o caminho percorrido do fim até o início
+  const caminho = [fim];
+  let antecessor = antecessores[fim];
+  while (antecessor !== null) {
+    caminho.unshift(antecessor); // adiciona o antecessor no começo do caminho
+    antecessor = antecessores[antecessor];
+  }
+
+  console.log(`Menor caminho de ${inicio} a ${fim}: ${caminho.join(" -> ")}`);
 }
+
+const container = document.getElementById("buttons-container"); // substitua "buttons-container" pelo ID do seu contêiner HTML
+for (let node in grafo) {
+  const button = document.createElement("button");
+  button.innerText = node;
+  container.appendChild(button);
+}
+
+
 
 bfs(17, 40);
