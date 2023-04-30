@@ -22,8 +22,6 @@ class Fila {
   }
 }
 
-let logFinal = ``;
-
 const grafo = {
   1: [2, 69],
   2: [1, 3, 69],
@@ -199,6 +197,7 @@ const visitados = {
 };
 
 function bfs(inicio, fim) {
+  let logFinal = ``;
   const fila = new Fila();
   const antecessores = {}; // objeto para armazenar antecessores
   antecessores[inicio] = null; // o início não tem antecessor
@@ -234,6 +233,7 @@ function bfs(inicio, fim) {
     antecessor = antecessores[antecessor];
   }
 
+  logFinal = `Menor caminho de ${inicio} a ${fim}: ${caminho.join(" -> ")}`;
   console.log(`Menor caminho de ${inicio} a ${fim}: ${caminho.join(" -> ")}`);
-  return `Menor caminho de ${inicio} a ${fim}: ${caminho.join(" -> ")}`;
+  return logFinal;
 }
