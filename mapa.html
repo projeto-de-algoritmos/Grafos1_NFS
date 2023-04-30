@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./Stylesheet/mapaStyle.css" />
     <script src="./Scripts/grafo.js" defer></script>
+    <script src="./Scripts/form.js" defer></script>
     <title>Grafo NFS</title>
   </head>
   <body>
@@ -16,12 +17,36 @@
         </div>
       </div>
       <div class="contentBox">
-        <div class ="response">
-            <div class ="entradas"></div>
-            <div class="saidas"></div>
+        <div class="response">
+          <div class="entradas">
+            <form id="form">
+              <div>
+                <input
+                  type="initial-node"
+                  id="initial-node"
+                  placeholder="Digite o nó inicial"
+                />
+              </div>
+              <div>
+                <input
+                  type="final-node"
+                  id="final-node"
+                  placeholder="Digite o nó final"
+                />
+              </div>
+
+              <input type="submit" value="BFS" />
+            </form>
+          </div>
+          <div class="saidas">
+            <p id="resposta"></p>
+          </div>
         </div>
         <div class="image-container">
-          <img src="./Stylesheet/imgs/NFSUNodes.jpg" alt="Descrição da imagem" />
+          <img
+            src="./Stylesheet/imgs/NFSUNodes.jpg"
+            alt="Descrição da imagem"
+          />
         </div>
       </div>
     </div>

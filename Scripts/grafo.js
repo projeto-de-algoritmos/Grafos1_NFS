@@ -43,7 +43,7 @@ const grafo = {
   16: [15, 17],
   17: [16, 18],
   18: [17, 19, 70],
-  19: [18, 21],
+  19: [18, 20],
   20: [19, 21],
   21: [20, 22],
   22: [21, 23],
@@ -235,4 +235,5 @@ function bfs(inicio, fim) {
   }
 
   console.log(`Menor caminho de ${inicio} a ${fim}: ${caminho.join(" -> ")}`);
+  return `Menor caminho de ${inicio} a ${fim}: ${caminho.join(" -> ")}`;
 }

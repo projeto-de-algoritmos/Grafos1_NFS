@@ -61,7 +61,7 @@ a {
   font-size: 40px;
 }
 
-.response{
+.response {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -88,7 +88,6 @@ a {
 
 .image-container {
   display: flex;
-  
 }
 
 .image-container img {
