@@ -15,10 +15,28 @@ class Fila {
 
   //retorna true quando vazia
   estaVazia() {
-    if (this.fila.length === 0) {
-      return true;
+    return this.fila.length === 0;
+  }
+}
+
+class Pilha {
+  constructor() {
+    this.pilha = [];
+  }
+
+  empilha(elemento) {
+    this.pilha.push(elemento);
+  }
+
+  desempilha() {
+    if (this.estaVazia()) {
+      return null;
     }
-    return false;
+    return this.pilha.pop();
+  }
+
+  estaVazia() {
+    return this.pilha.length === 0;
   }
 }
 
@@ -233,7 +251,37 @@ function bfs(inicio, fim) {
     antecessor = antecessores[antecessor];
   }
 
-  logFinal = `Menor caminho de ${inicio} a ${fim}: ${caminho.join(" -> ")}`;
-  console.log(`Menor caminho de ${inicio} a ${fim}: ${caminho.join(" -> ")}`);
+  logFinal = `O menor caminho de ${inicio} a ${fim}:
+  ${caminho.join(" -> ")}`;
+  console.log(logFinal);
   return logFinal;
+}
+
+function dfs(inicio, fim) {
+  let logFinal = ``;
+  const pilha = new Pilha();
+  const caminho = [];
+
+  pilha.empilha(inicio);
+  visitados[inicio] = true;
+
+  while (!pilha.estaVazia()) {
+    if (visitados[fim]) {
+      caminho.push(fim);
+      logFinal = `Um caminho de ${inicio} a ${fim}: ${caminho.join(" -> ")}`;
+      console.log(logFinal);
+      return logFinal;
+    }
+
+    const noAtual = pilha.desempilha();
+    caminho.push(noAtual);
+    const vizinhos = grafo[noAtual];
+
+    vizinhos.forEach((vizinho) => {
+      if (!visitados[vizinho]) {
+        visitados[vizinho] = true;
+        pilha.empilha(vizinho);
+      }
+    });
+  }
 }

@@ -21,24 +21,45 @@
           <div class="entradas">
             <form id="form">
               <div>
+                <label class="form-label" for="initial-node"
+                  >Digite o nó inicial:</label
+                ><br />
                 <input
                   class="textbox"
-                  type="initial-node"
+                  type="text"
                   id="initial-node"
-                  placeholder="Digite o ponto inicial"
-                />
-              </div>
-              <div>
+                  name="initial-node"
+                /><br />
+                <label class="form-label" for="final-node"
+                  >Digite o nó final:</label
+                ><br />
                 <input
                   class="textbox"
-                  type="final-node"
+                  type="text"
                   id="final-node"
-                  placeholder="Digite o ponto final"
+                  name="final-node"
                 />
               </div>
-
-              <input id="submit" type="submit" value="BFS" />
+              <input
+                class="submit-bfs"
+                type="submit"
+                value="BFS"
+                onclick="rodaBfs()"
+              />
+              <input
+                class="submit-dfs"
+                type="submit"
+                value="DFS"
+                onclick="rodaDfs()"
+              />
             </form>
+            <button
+              class="restart-graph"
+              style="display: none"
+              onclick="location.reload()"
+            >
+              Reiniciar
+            </button>
           </div>
           <div class="saidas">
             <p id="resposta"></p>
